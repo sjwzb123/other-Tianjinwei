@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.bixing.tiannews.TestActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_reg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注册" />
+
+        <Button
+            android:id="@+id/btn_phone_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="登录" />
+
+        <Button
+            android:id="@+id/btn_getcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="获取验证码" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="更新用户" />
+        <Button
+            android:id="@+id/btn_update_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="更新密码" />
+        <Button
+            android:id="@+id/btn_report"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="爆料" />
+        <Button
+            android:id="@+id/btn_newtype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="新闻分类" />
+        <Button
+            android:id="@+id/btn_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="新闻" />
+    </LinearLayout>
+</RelativeLayout>

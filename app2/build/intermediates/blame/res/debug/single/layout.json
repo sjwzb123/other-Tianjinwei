@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\Other\\TiAnNews\\app2\\build\\intermediates\\res\\merged\\debug\\layout\\login_page.xml",
+        "source": "E:\\Other\\TiAnNews\\app2\\src\\main\\res\\layout\\login_page.xml"
+    },
+    {
+        "merged": "E:\\Other\\TiAnNews\\app2\\build\\intermediates\\res\\merged\\debug\\layout\\register_page.xml",
+        "source": "E:\\Other\\TiAnNews\\app2\\src\\main\\res\\layout\\register_page.xml"
+    }
+]

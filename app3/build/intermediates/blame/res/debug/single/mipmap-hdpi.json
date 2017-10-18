@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\share_icon.png",
+        "source": "E:\\Other\\TiAnNews\\app3\\src\\main\\res\\mipmap-hdpi\\share_icon.png"
+    },
+    {
+        "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
+        "source": "E:\\Other\\TiAnNews\\app3\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ssdk_oks_ptr_ptr.png",
+        "source": "E:\\Other\\TiAnNews\\app3\\src\\main\\res\\mipmap-hdpi\\ssdk_oks_ptr_ptr.png"
+    }
+]
