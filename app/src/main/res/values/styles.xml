@@ -9,8 +9,8 @@
         <item name="tabView">@style/MyTabView</item>
     </style>
     <style name="MyTabView" parent="TabView">
-        <item name="iconWidth">28dp</item>
-        <item name="iconHeight">28dp</item>
+        <item name="iconWidth">20dp</item>
+        <item name="iconHeight">20dp</item>
         <item name="android:textColor">@drawable/tab_color_select</item>
     </style>
 

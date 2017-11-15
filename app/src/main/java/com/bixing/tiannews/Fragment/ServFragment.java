@@ -88,6 +88,9 @@ public class ServFragment extends BaseFragment {
                 DebugLog.d(TAG, "response " + response);
 
                 final ResponseServiceBean responseServiceBean = GsonManager.fromJsonStr(response, ResponseServiceBean.class);
+                if (getActivity()==null){
+                    return;
+                }
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {

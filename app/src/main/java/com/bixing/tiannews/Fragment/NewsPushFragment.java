@@ -6,6 +6,7 @@ import java.util.List;
 import com.bixing.tiannews.LoginActivity;
 import com.bixing.tiannews.R;
 import com.bixing.tiannews.Base.BaseFragment;
+import com.bixing.tiannews.bean.ReportBean;
 import com.bixing.tiannews.bean.ReportResponseBean;
 import com.bixing.tiannews.bean.UploadFileBean;
 import com.bixing.tiannews.bean.UploadFileResponseBean;
@@ -228,7 +229,7 @@ public class NewsPushFragment extends BaseFragment {
                     @Override
                     public void run() {
                         if (responseBean.isSucc()) {
-                            ToastUtils.toast(getActivity(), responseBean.getMsg());
+                            ToastUtils.toast(getActivity(), ReportBean.cllMsg);
                         } else {
                             ToastUtils.toast(getActivity(), responseBean.getMsg());
                         }

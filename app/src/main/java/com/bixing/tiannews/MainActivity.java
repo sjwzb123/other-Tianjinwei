@@ -38,8 +38,8 @@ public class MainActivity extends BaseActivity {
     private LinearLayout ll_top;
     private RelativeLayout rl_top;
     private TextView tv_title;
-    private String[] titles = {"天津卫", "服务", "读报", "报料", "我的"};
-
+    private String[] titles = {"天津卫", "服 务", "读 报", "报 料", "我 的"};
+    private View bgView;
     private List<BaseFragment> initFragments() {
         List<BaseFragment> fragments = new ArrayList<BaseFragment>();
 
@@ -84,6 +84,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void initView() {
         askPermisson();
+        bgView=findViewById(R.id.iv_launch);
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
         mIndicator = (IconTabPageIndicator) findViewById(R.id.indicator);
         List<BaseFragment> fragments = initFragments();
@@ -131,6 +132,12 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
+        bgView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                bgView.setVisibility(View.GONE);
+            }
+        },1000);
     }
 
     private void askPermisson() {

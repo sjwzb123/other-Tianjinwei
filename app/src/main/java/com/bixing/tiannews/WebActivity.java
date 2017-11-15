@@ -1,13 +1,21 @@
 package com.bixing.tiannews;
 
+import com.bixing.tiannews.Base.BaseActivity;
+import com.bixing.tiannews.utils.DebugLog;
+import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
+import com.tencent.mm.opensdk.modelmsg.WXWebpageObject;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.text.TextUtils;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
-
-import com.bixing.tiannews.Base.BaseActivity;
-import com.bixing.tiannews.utils.DebugLog;
-
-import cn.sharesdk.onekeyshare.OnekeyShare;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 /**
  * Created by sjw on 2017/9/27.
@@ -17,29 +25,77 @@ public class WebActivity extends BaseActivity {
     private WebView webView;
     private View shareView;
     private String mUrl;
+    private String APP_ID = "wx28b986b749561a99";
+    private IWXAPI api;
+    // private int mTargetScene = SendMessageToWX.Req.WXSceneSession;
+    private String newsTitle;
+
     @Override
     protected int getContviewId() {
         return R.layout.activity_web;
     }
 
+    private LinearLayout llShare;
+    private ImageView ivChat;
+    private ImageView ivF;
+
     @Override
     protected void initView() {
+        api = WXAPIFactory.createWXAPI(this, APP_ID);
+        llShare = (LinearLayout)findViewById(R.id.ll_share);
+
+        ivChat = (ImageView)findViewById(R.id.iv_weixin);
+        ivF = (ImageView)findViewById(R.id.iv_weixin_m);
+        ivChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shareToWxinChat(SendMessageToWX.Req.WXSceneSession);
+                llShare.setVisibility(View.GONE);
+            }
+        });
+        ivF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                shareToWxinChat(SendMessageToWX.Req.WXSceneTimeline);
+                llShare.setVisibility(View.GONE);
+            }
+        });
+        findViewById(R.id.iv_back).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         shareView = findViewById(R.id.btn_share);
+        findViewById(R.id.iv_cancle).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                llShare.setVisibility(View.GONE);
+            }
+        });
         shareView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // share();
                 share();
             }
         });
         mUrl = getIntent().getStringExtra("url");
+        newsTitle = getIntent().getStringExtra("title");
         boolean b = getIntent().getBooleanExtra("isShare", false);
         if (b) {
             shareView.setVisibility(View.VISIBLE);
         } else {
-            shareView.setVisibility(View.GONE);
+            // shareView.setVisibility(View.GONE);
         }
         DebugLog.d("url ", mUrl);
         webView = (WebView)findViewById(R.id.wb);
+        webView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                llShare.setVisibility(View.GONE);
+            }
+        });
         webView.loadUrl(mUrl);
         // 声明WebSettings子类
         WebSettings webSettings = webView.getSettings();
@@ -66,37 +122,37 @@ public class WebActivity extends BaseActivity {
     }
 
     private void share() {
-
-        OnekeyShare oks = new OnekeyShare();
-        // 关闭sso授权
-        oks.disableSSOWhenAuthorize();
-
-        // 分享时Notification的图标和文字 2.5.9以后的版本不 调用此方法
-        // oks.setNotification(R.drawable.ic_launcher, getString(R.string.app_name));
-        // title标题，印象笔记、邮箱、信息、微信、人人网和QQ空间使用
-        oks.setTitle("分享");
-        // titleUrl是标题的网络链接，仅在人人网和QQ空间使用
-        oks.setTitleUrl(mUrl);
-        // text是分享文本，所有平台都需要这个字段
-       // oks.setText("我是分享文本");
-        // imagePath是图片的本地路径，Linked-In以外的平台都支持此参数
-        //oks.setImagePath("/sdcard/test.jpg");// 确保SDcard下面存在此张图片
-        // url仅在微信（包括好友和朋友圈）中使用
-        oks.setUrl(mUrl);
-        // comment是我对这条分享的评论，仅在人人网和QQ空间使用
-       // oks.setComment("我是测试评论文本");
-        // site是分享此内容的网站名称，仅在QQ空间使用
-        oks.setSite(getString(R.string.app_name));
-        // siteUrl是分享此内容的网站地址，仅在QQ空间使用
-        oks.setSiteUrl(mUrl);
-
-        // 启动分享GUI
-        oks.show(this);
+        llShare.setVisibility(View.VISIBLE);
 
     }
 
     @Override
     protected void iniData() {
 
+    }
+
+    private void shareToWxinChat(int targetScene) {
+        WXWebpageObject webpage = new WXWebpageObject();
+        webpage.webpageUrl = mUrl;
+        WXMediaMessage msg = new WXMediaMessage(webpage);
+        newsTitle = TextUtils.isEmpty(newsTitle) ? "天津卫新闻" : newsTitle;
+        msg.title = newsTitle;
+        msg.description = newsTitle;
+
+        Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
+        // Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp, THUMB_SIZE, THUMB_SIZE, true);
+        // bmp.recycle();
+        msg.thumbData = WXUitls.bmpToByteArray(bmp, true);
+
+        SendMessageToWX.Req req = new SendMessageToWX.Req();
+
+        req.transaction = buildTransaction("webpage");
+        req.message = msg;
+        req.scene = targetScene;
+        api.sendReq(req);
+    }
+
+    private String buildTransaction(final String type) {
+        return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
     }
 }

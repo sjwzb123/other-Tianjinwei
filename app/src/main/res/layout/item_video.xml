@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_ffffff"
-    android:padding="10dp">
+    android:padding="5dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="天津卫移动服务开通"
-            android:textColor="@color/color_000000"
+            android:textColor="@color/color_151515"
             android:textSize="15sp" />
 
 
@@ -35,14 +35,22 @@
             android:layout_marginTop="5dp"
             android:orientation="horizontal"
             android:visibility="visible">
-
+            <TextView
+                android:textColor="@color/color_f85959"
+                android:id="@+id/tv_lab"
+                android:textSize="10sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="置顶"
+                />
             <TextView
                 android:id="@+id/tv_ping"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="258评"
+                android:layout_marginLeft="10dp"
                 android:textColor="@color/color_a3a3a3"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tv_zan"
@@ -53,7 +61,16 @@
                 android:drawablePadding="5dp"
                 android:text="369"
                 android:textColor="@color/color_a3a3a3"
-                android:textSize="15sp" />
+                android:textSize="12sp" />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:id="@+id/tv_time"
+                android:textSize="12sp"
+                android:textColor="@color/color_a3a3a3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7天前"
+                />
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

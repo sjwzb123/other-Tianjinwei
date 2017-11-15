@@ -42,7 +42,7 @@ public class MainFragment extends BaseFragment {
     private FragmentPagerAdapter adapter;
     private ViewPager pager;
     private TabPageIndicator indicator;
-    private String[] defaultTab = { "推荐", "热点" };
+    private String[] defaultTab = { "推荐" };
     private List<Fragment> fragments = new ArrayList<>();
 
     @Override
@@ -64,6 +64,7 @@ public class MainFragment extends BaseFragment {
 
     private void initView(View view) {
         // ViewPager的adapter
+
         adapter = new TabPageIndicatorAdapter(getActivity().getSupportFragmentManager());
         pager = (ViewPager)view.findViewById(R.id.pager);
         pager.setAdapter(adapter);
@@ -140,6 +141,7 @@ public class MainFragment extends BaseFragment {
 
             @Override
             public void onSucc(String response) {
+
                 if (TextUtils.isEmpty(response)) {
                     return;
                 }

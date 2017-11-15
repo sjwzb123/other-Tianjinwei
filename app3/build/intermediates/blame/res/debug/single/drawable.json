@@ -148,12 +148,12 @@
         "source": "E:\\Other\\TiAnNews\\app3\\src\\main\\res\\drawable\\ssdk_oks_classic_progressbar.xml"
     },
     {
-        "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
-        "source": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_ic_clear_material.xml"
-    },
-    {
         "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
         "source": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
+        "source": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\drawable\\abc_ic_clear_material.xml"
     },
     {
         "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",

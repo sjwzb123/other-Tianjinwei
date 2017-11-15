@@ -176,12 +176,12 @@
         "source": "E:\\Other\\TiAnNews\\app3\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_laiwang.png"
     },
     {
-        "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ssdk_oks_classic_kakaotalk.png",
-        "source": "E:\\Other\\TiAnNews\\app3\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_kakaotalk.png"
-    },
-    {
         "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ssdk_oks_classic_email.png",
         "source": "E:\\Other\\TiAnNews\\app3\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_email.png"
+    },
+    {
+        "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ssdk_oks_classic_kakaotalk.png",
+        "source": "E:\\Other\\TiAnNews\\app3\\src\\main\\res\\drawable-xhdpi\\ssdk_oks_classic_kakaotalk.png"
     },
     {
         "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\ssdk_oks_classic_laiwangmoments.png",

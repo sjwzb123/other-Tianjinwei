@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.bixing.tiannews.Base.BaseFragment;
 import com.bixing.tiannews.LoginActivity;
+import com.bixing.tiannews.MyCollectListActivity;
 import com.bixing.tiannews.MyReportActivity;
 import com.bixing.tiannews.R;
 import com.bixing.tiannews.UpdatePhoneActivity;
@@ -186,6 +187,13 @@ public class UserFragment extends BaseFragment {
                 startActivity(intent);
             }
         });
+        view.findViewById(R.id.rl_coll).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), MyCollectListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void selectPic() {
@@ -225,16 +233,22 @@ public class UserFragment extends BaseFragment {
 
             @Override
             public void onSucc(final String response) {
+                if (TextUtils.isEmpty(response)){
+                    ToastUtils.toast(getContext(), "信息异常");
+                    return;
+                }
                 final UploadFileResponseBean responseBean = GsonManager.fromJsonStr(response, UploadFileResponseBean.class);
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        if (responseBean.isSucc()) {
+                        if (responseBean != null && responseBean.isSucc()) {
 
                             updateUser(responseBean.getData().getImg0());
-                        } else {
+                        } else if (responseBean != null) {
                             ToastUtils.toast(getContext(), responseBean.getMsg());
 
+                        } else {
+                            ToastUtils.toast(getContext(), "信息异常");
                         }
                     }
                 });

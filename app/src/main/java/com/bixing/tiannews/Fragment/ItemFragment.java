@@ -4,6 +4,8 @@ import com.bixing.tiannews.R;
 import com.bixing.tiannews.Base.BaseFragment;
 import com.bixing.tiannews.adapter.NewsAdapter;
 import com.bixing.tiannews.adapter.RecycleViewDivider;
+import com.bixing.tiannews.bean.BannerAndHorseBean;
+import com.bixing.tiannews.bean.BannerAndHorseResponsBean;
 import com.bixing.tiannews.bean.NewsResponsBean;
 import com.bixing.tiannews.http.HttpCallBack;
 import com.bixing.tiannews.http.HttpManager;
@@ -47,9 +49,9 @@ public class ItemFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        DebugLog.d(TAG,"onViewCreated  "+typeTitle);
+        DebugLog.d(TAG, "onViewCreated  " + typeTitle);
         initView(view);
-         //getNetData();
+        // getNetData();
     }
 
     private void initView(View view) {
@@ -75,6 +77,7 @@ public class ItemFragment extends BaseFragment {
                 getNetData();
             }
         });
+
     }
 
     @Override
@@ -83,6 +86,7 @@ public class ItemFragment extends BaseFragment {
         DebugLog.d(TAG, "setUserVisibleHint " + typeTitle);
         if (isVisibleToUser && page == 1) {
             getNetData();
+            getBanner();
         }
     }
 
@@ -106,11 +110,13 @@ public class ItemFragment extends BaseFragment {
                     @Override
                     public void run() {
                         if (responsBean.isSucc()) {
-                            if (responsBean.getData() != null) {
-                                adapter.refreData(responsBean.getData());
+                            if (responsBean.getData() != null && responsBean.getData().size() > 0) {
+                                adapter.loadMore(responsBean.getData());
                                 page++;
+                            } else {
+                                ToastUtils.toast(getContext(), "没有更多数据了");
                             }
-                            //ToastUtils.toast(getContext(), responsBean.getMsg());
+                            // ToastUtils.toast(getContext(), responsBean.getMsg());
 
                         } else {
                             ToastUtils.toast(getContext(), responsBean.getMsg());
@@ -122,6 +128,38 @@ public class ItemFragment extends BaseFragment {
                 });
             }
         });
+
+    }
+    private void getBanner(){
+        if (typeTitle.equals("推荐")) {
+            HttpManager.newsConfig(new HttpCallBack() {
+                @Override
+                public void onFailure(String errCode, String errMsg) {
+
+                }
+
+                @Override
+                public void onSucc(final String response) {
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            if (response!=null){
+                                BannerAndHorseResponsBean responsBean=GsonManager.fromJsonStr(response,BannerAndHorseResponsBean.class);
+                                if (responsBean.isSucc()){
+                                    BannerAndHorseBean bean=responsBean.getData();
+                                    bean.setBlockType(String.valueOf(5));
+                                    adapter.addBanner(bean);
+                                }
+                            }
+
+                        }
+                    });
+
+
+                    DebugLog.d(TAG, "  banner response " + response.toString());
+                }
+            });
+        }
     }
 
     String typeTitle;

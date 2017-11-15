@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <com.bixing.tiannews.widget.HeadView
+        android:id="@+id/head"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/color_f7f7f7"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_kuaibao"
+            android:text="快报"
+            android:layout_width="40dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/kuaibao_bg"
+            android:textColor="@color/color_ffffff"
+            android:textSize="15sp" />
+
+        <com.bixing.tiannews.widget.ScrollUpListView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+           ></com.bixing.tiannews.widget.ScrollUpListView>
+    </LinearLayout>
+</LinearLayout>

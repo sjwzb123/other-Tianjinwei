@@ -1,5 +1,7 @@
 package com.bixing.tiannews.bean;
 
+import android.text.TextUtils;
+
 import com.bixing.tiannews.utils.DebugLog;
 
 import java.text.ParseException;
@@ -13,6 +15,7 @@ import java.util.List;
  */
 
 public class ReportBean extends BaseBean {
+    public static final String cllMsg ="尊敬的网友：您好，感谢您的来信报料，我们已将您提出的问题转交责任单位，希望您一如既往地关心支持我们的工作，提出更多更好的意见和建议。祝您生活愉快！";
     /**
      * reportId
      * title
@@ -32,6 +35,18 @@ public class ReportBean extends BaseBean {
     private String phone;
     private String createTime;
     private List<String> img;
+    private String msg;
+
+    public String getMsg() {
+        if (TextUtils.isEmpty(msg)){
+            return cllMsg;
+        }
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
 
     public List<String> getImg() {
         DebugLog.d("imgs ","size "+img.size());

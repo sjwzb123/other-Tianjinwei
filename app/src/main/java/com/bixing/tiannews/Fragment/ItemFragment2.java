@@ -202,7 +202,7 @@ public class ItemFragment2 extends BaseFragment {
 
         itemList.addAll(data);
         fragments.clear();
-        if (data == null) {
+        if (data == null||data.size()==0) {
             return;
         }
         for (NewsTypeBean bean : data) {

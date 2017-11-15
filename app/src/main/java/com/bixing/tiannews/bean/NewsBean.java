@@ -33,6 +33,24 @@ public class NewsBean extends BaseBean {
     private String comment;
     private String blockType;
     private String detailUrl;
+    private String label;
+    private String time;
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     public String getDetailUrl() {
         return detailUrl;

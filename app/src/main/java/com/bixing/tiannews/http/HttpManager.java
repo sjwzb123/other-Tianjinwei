@@ -1,5 +1,6 @@
 package com.bixing.tiannews.http;
 
+import android.content.Context;
 import android.text.TextUtils;
 
 import java.io.File;
@@ -12,6 +13,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.bixing.tiannews.utils.DebugLog;
+import com.bixing.tiannews.utils.SpfManger;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -259,7 +261,7 @@ public class HttpManager {
             jsonObject.put("title", title);
             jsonObject.put("content", content);
             jsonObject.put("phone", phone);
-            JSONArray jsonArray=new JSONArray(imgPaths);
+            JSONArray jsonArray = new JSONArray(imgPaths);
             jsonObject.put("imgPaths", jsonArray);
             jsonObject.put("addr", addr);
         } catch (JSONException e) {
@@ -314,6 +316,22 @@ public class HttpManager {
                 // }
             }
         });
+    }
+
+    public static void newsConfig(HttpCallBack callBack) {
+        request("", HttpConfig.newsConfig, callBack);
+    }
+
+    public static void collectList(String token, String page, HttpCallBack callBack) {
+        JSONObject jsonObject = new JSONObject();
+
+        try {
+            jsonObject.put("page", page);
+            jsonObject.put("token", token);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        request(jsonObject.toString(), HttpConfig.collectList,callBack);
     }
 
     private static void notifyToMainUIThread(HttpCallBack callBack, Class c) {

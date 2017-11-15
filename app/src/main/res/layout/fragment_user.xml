@@ -32,7 +32,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:background="@color/color_b6b5b6">
+                android:background="@color/color_7a7a7a">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -44,8 +44,8 @@
                     <ImageView
 
                         android:id="@+id/iv_head"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
                         android:layout_marginLeft="10dp"
                         android:scaleType="centerCrop"
                         android:src="@drawable/myhead" />
@@ -109,12 +109,12 @@
             <RelativeLayout
                 android:id="@+id/rl_update_phone"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:paddingLeft="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="修改手机号"
                     android:textColor="@color/color_a3a3a3" />
@@ -135,7 +135,7 @@
             <RelativeLayout
                 android:id="@+id/rl_update_pwd"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:paddingLeft="10dp">
 
                 <TextView
@@ -159,16 +159,17 @@
                 android:background="@color/color_b6b5b6"></View>
 
             <RelativeLayout
+                android:id="@+id/rl_coll"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:paddingLeft="10dp"
-                android:visibility="gone">
+                android:visibility="visible">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="我的评论"
+                    android:text="我的收藏"
                     android:textColor="@color/color_a3a3a3" />
 
                 <ImageView
@@ -183,12 +184,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/color_b6b5b6"
-                android:visibility="gone"></View>
+                android:visibility="visible"></View>
 
             <RelativeLayout
                 android:id="@+id/rl_report"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:paddingLeft="10dp">
 
                 <TextView
@@ -213,7 +214,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
+                android:layout_height="40dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -246,18 +247,19 @@
                 android:text="退出"
                 android:textColor="@color/color_ffffff"
                 android:textSize="18sp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:lineSpacingMultiplier="1.2"
+                android:text="天津市委政法委及《天津政法报》社\n官方新闻客户端\n版本:V1.0"
+                android:textColor="@color/color_a3a3a3"
+                android:textSize="15sp" />
         </LinearLayout>
     </ScrollView>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:lineSpacingMultiplier="1.2"
-        android:text="天津市委政法委及《天津政法报》社\n官方新闻客户端"
-        android:textColor="@color/color_a3a3a3"
-        android:textSize="15sp" />
+
 </RelativeLayout>

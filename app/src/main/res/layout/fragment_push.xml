@@ -30,8 +30,9 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:background="@null"
+            android:paddingTop="10dp"
             android:gravity="left"
-            android:hint="填写爆料内容"
+            android:hint="说点什么......"
             android:textSize="15sp" />
 
         <View
@@ -58,27 +59,46 @@
             android:layout_height="5dp"
             android:background="@color/color_b6b5b6"></View>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/phone"/>
         <EditText
+            android:layout_marginLeft="5dp"
             android:id="@+id/et_phone"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
             android:hint="联系电话（选填，仅工作人员可见）"
             android:textSize="15sp" />
-
+        </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/color_b6b5b6"></View>
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/addr"/>
         <EditText
             android:id="@+id/et_addr"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@null"
+            android:layout_marginLeft="5dp"
             android:hint="请输入爆料地址"
             android:textSize="15sp" />
-
+        </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"

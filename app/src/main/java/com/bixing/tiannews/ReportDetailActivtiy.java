@@ -18,6 +18,7 @@ public class ReportDetailActivtiy extends BaseActivity {
     private TextView tv_title, tv_time, tv_phone, tv_addr, tv_content, tv_status;
     private ReportBean bean;
     private LinearLayout ll_img;
+    private TextView tv_msg;
 
     @Override
     protected int getContviewId() {
@@ -33,6 +34,7 @@ public class ReportDetailActivtiy extends BaseActivity {
         tv_content = (TextView)findViewById(R.id.tv_content);
         ll_img = (LinearLayout)findViewById(R.id.ll_img);
         tv_status = (TextView)findViewById(R.id.tv_status);
+        tv_msg = (TextView)findViewById(R.id.tv_mssage);
 
     }
 
@@ -45,6 +47,7 @@ public class ReportDetailActivtiy extends BaseActivity {
         tv_title.setText(bean.getTitle());
         tv_time.setText("时间：" + bean.getCreateTime());
         tv_status.setText(bean.getStatus());
+        tv_msg.setText(bean.getMsg());
         DebugLog.d("initData", "size " + bean.getImg());
         for (String imgPath : bean.getImg()) {
             ImageView imageView = new ImageView(this);

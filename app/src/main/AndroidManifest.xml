@@ -13,6 +13,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/StyledIndicators"
             android:windowSoftInputMode="adjustPan">
+
+        </activity>
+        <activity android:name=".LanuchActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -56,6 +60,9 @@
             android:screenOrientation="portrait"></activity>
         <activity
             android:name=".ReportDetailActivtiy"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".MyCollectListActivity"
             android:screenOrientation="portrait"></activity>
         <activity
             android:name="com.mob.tools.MobUIShell"

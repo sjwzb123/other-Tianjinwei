@@ -21,4 +21,6 @@ public class HttpConfig {
     public static String service = BASE_URL + "service";
     public static String updatePhone = BASE_URL + "updatePhone";
     public static String myReport = BASE_URL + "myReport";
+    public static String newsConfig=BASE_URL+"newsConfig";
+    public static String collectList=BASE_URL+"collectList";
 }

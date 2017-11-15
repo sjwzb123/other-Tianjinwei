@@ -1,17 +1,30 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@color/color_ffffff"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <RelativeLayout
         android:id="@+id/ll_top1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/color_C00000"
+        android:background="@color/color_ffffff"
         android:visibility="visible">
 
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/icon_back"/>
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
@@ -20,30 +33,65 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:gravity="center_vertical"
-            android:text="详情"
+            android:text=""
             android:textColor="@color/color_ffffff"
             android:textSize="25sp"
             android:textStyle="bold" />
 
-        <Button
+        <ImageView
             android:id="@+id/btn_share"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="10dp"
-            android:background="@color/color_00000000"
-            android:text="分享"
+            android:src="@drawable/share"
+            android:visibility="gone"
             android:textColor="@color/color_ffffff"
             android:textSize="18sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/color_eeebeb"></View>
     </RelativeLayout>
 
     <WebView
         android:id="@+id/wb"
+        android:background="@color/color_ffffff"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </WebView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_share"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_marginBottom="70dp">
+        <ImageView
+            android:id="@+id/iv_weixin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ssdk_oks_classic_wechat"/>
 
+        <ImageView
+            android:id="@+id/iv_weixin_m"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ssdk_oks_classic_wechatmoments"/>
+        <ImageView
+            android:id="@+id/iv_cancle"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ssdk_country_clear_search"/>
+    </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

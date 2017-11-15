@@ -19,13 +19,13 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="10dp"
             android:gravity="center_vertical"
-            android:text="注册"
+            android:text="注 册"
             android:textColor="@color/color_ffffff"
-            android:textSize="25sp"
+            android:textSize="20sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_marginLeft="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,12 +42,14 @@
         <Button
             android:id="@+id/btn_getcode"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
             android:background="@drawable/btn_yes_bg"
-            android:padding="2dp"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
             android:text="获取验证码"
             android:textColor="@color/color_ffffff" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <View
         android:layout_marginLeft="10dp"
@@ -105,18 +107,18 @@
             android:id="@+id/btn_reg"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/btn_no_bg"
-            android:text="注册"
+            android:text="注 册"
             android:textColor="@color/color_ffffff" />
 
         <Button
             android:id="@+id/btn_login"
             android:layout_width="100dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="20dp"
             android:background="@drawable/btn_yes_bg"
-            android:text="登录"
+            android:text="登 录"
             android:textColor="@color/color_ffffff" />
 
     </LinearLayout>

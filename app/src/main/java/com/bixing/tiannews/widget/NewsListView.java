@@ -113,7 +113,7 @@ public class NewsListView extends LinearLayout {
                     public void run() {
                         if (responsBean.isSucc()) {
                             if (responsBean.getData() != null) {
-                                adapter.refreData(responsBean.getData());
+                                adapter.loadMore(responsBean.getData());
                                 page++;
                             }
                             //ToastUtils.toast(getContext(), responsBean.getMsg());

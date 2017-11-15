@@ -11,7 +11,7 @@
 
     <TextView
         android:textSize="15sp"
-        android:textColor="@color/color_000000"
+        android:textColor="@color/color_151515"
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,11 +36,20 @@
         android:layout_alignParentBottom="true"
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
-
+        <TextView
+            android:textColor="@color/color_f85959"
+            android:id="@+id/tv_lab"
+            android:textSize="10sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="置顶"
+            android:background="@drawable/tv_bg"
+            />
         <TextView
             android:textColor="@color/color_a3a3a3"
             android:id="@+id/tv_ping"
-            android:textSize="15sp"
+            android:textSize="12sp"
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="258评" />
@@ -52,7 +61,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="369"
+            android:textSize="12sp"
             android:drawablePadding="5dp"
             android:drawableLeft="@drawable/zan"/>
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:id="@+id/tv_time"
+            android:textSize="12sp"
+            android:textColor="@color/color_a3a3a3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7天前"
+            />
     </LinearLayout>
 </LinearLayout>

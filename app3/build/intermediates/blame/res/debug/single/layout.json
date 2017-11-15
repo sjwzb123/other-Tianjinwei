@@ -52,16 +52,16 @@
         "source": "E:\\Other\\TiAnNews\\app3\\src\\main\\res\\layout\\userinfo_fragment.xml"
     },
     {
+        "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
+        "source": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+    },
+    {
         "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\layout\\layout_header.xml",
         "source": "E:\\Other\\TiAnNews\\app3\\src\\main\\res\\layout\\layout_header.xml"
     },
     {
         "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
         "source": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_icon.xml"
-    },
-    {
-        "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.2.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "E:\\Other\\TiAnNews\\app3\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
